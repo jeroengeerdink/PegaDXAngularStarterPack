@@ -1,27 +1,28 @@
-# PegaappNg
+# Pega DX based on Angular for Firebase as a Gitpod project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.0.
+Quickly get a DX interpreter up and running
 
-## Development server
+Prerequisites:
+- Running pega node with DX enabled application
+- Google account
+- A ready to go Firebase project with Hosting enabled
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Get started by clicking https://gitpod.io/#https://github.com/jeroengeerdink/PegaDXAngularStarterPack
 
-## Code scaffolding
+After setup (can take a few mins the first time) you will be asked to login to your google account and copy the token back into the commandline.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Make sure you update the URLs in 'src/app/_services/endpoints.ts'
 
-## Build
+## Testing
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Run `ng serve` for a dev server. Use the link in teh command line to opem
 
-## Running unit tests
+## Firebase setup
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Use **firebase init** to enable hosting and select the project you want to use. 
 
-## Running end-to-end tests
+## Deploying
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Run the following
+- **ng build** to compile the code for deployment
+- **firebase deploy** to deploy the app

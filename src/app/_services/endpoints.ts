@@ -8,14 +8,14 @@ export const loginBoxType = {
 export const endpoints = {
   // Change this URL if you want to point the React application at another Pega server.
   //BASEURL: "http://localhost:1081/prweb/api/v1",
-  BASEURL: "https://localhost:1080/prweb/api/v1",
+  BASEURL: "https://dx.pegatsdemo.com/prweb/api/v1",
 
     // oauth config for both loign in screen/redirect and background login with clientid/secret
     OAUTHCFG: {
       providerID: "pega",
-      authorization: "https://localhost:1080/prweb/PRRestService/oauth2/v1/authorize",
-      authority: "https://localhost:1080/prweb/PRRestService/oauth2/v1",
-      token: "https://localhost:1080/prweb/PRRestService/oauth2/v1/token",
+      authorization: "https://dx.pegatsdemo.com/prweb/PRRestService/oauth2/v1/authorize",
+      authority: "https://dx.pegatsdemo.com/prweb/PRRestService/oauth2/v1",
+      token: "https://dx.pegatsdemo.com/prweb/PRRestService/oauth2/v1/token",
       scope: [],
       grant_type:  "client_credentials",
       // main window login
