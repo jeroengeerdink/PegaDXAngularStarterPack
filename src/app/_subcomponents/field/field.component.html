@@ -1,0 +1,29 @@
+
+<div [ngSwitch]="fieldComp.control?.type" class="pega-form-icon-left" *ngIf="fieldComp?.visible && fieldComp.control?.type=='pxIcon'">
+  <app-icon [fieldComp]="fieldComp" *ngSwitchCase="'pxIcon'" [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID"></app-icon>
+</div>
+<div [ngSwitch]="fieldComp.control?.type" class="pega-form-left" *ngIf="fieldComp?.visible && fieldComp.control?.type!='pxIcon'">
+  <app-textinput [fieldComp]="fieldComp" *ngSwitchCase="'pxTextInput'" [formGroup]="formGroup" [noLabel]=noLabel [CaseID]="CaseID" [RefType$]="RefType$"></app-textinput>
+  <app-number [fieldComp]="fieldComp" *ngSwitchCase="'pxInteger'" [formGroup]="formGroup" [noLabel]=noLabel [CaseID]="CaseID" [RefType$]="RefType$"></app-number>
+  <app-textinput [fieldComp]="fieldComp" *ngSwitchCase="'pxPhone'" [formGroup]="formGroup" [noLabel]=noLabe [CaseID]="CaseID" [RefType$]="RefType$"></app-textinput>
+  <app-checkbox [fieldComp]="fieldComp"  *ngSwitchCase="'pxCheckbox'" [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID" [RefType$]="RefType$"></app-checkbox>
+  <app-email [fieldComp]="fieldComp"  *ngSwitchCase="'pxEmail'" [formGroup]="formGroup" [noLabel]=noLabel [CaseID]="CaseID" [RefType$]="RefType$"></app-email>
+  <app-unitdays [fieldComp]="fieldComp" *ngSwitchCase="'UnitDays'" [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID" [RefType$]="RefType$"></app-unitdays>
+  <app-autocomplete [fieldComp]="fieldComp"  *ngSwitchCase="'pxAutoComplete'" [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID" [RefType$]="RefType$"></app-autocomplete>
+  <app-dropdown [fieldComp]="fieldComp" *ngSwitchCase="'pxDropdown'" [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID" [RefType$]="RefType$"></app-dropdown>
+  <app-radio [fieldComp]="fieldComp" *ngSwitchCase="'pxRadioButtons'" [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID" [RefType$]="RefType$"></app-radio>
+  <app-textarea [fieldComp]="fieldComp" *ngSwitchCase="'pxTextArea'" [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID" [RefType$]="RefType$"></app-textarea>
+  <app-date [fieldComp]="fieldComp" *ngSwitchCase="'pxDateTime'" [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID" [RefType$]="RefType$"></app-date>
+  <app-text [fieldComp]="fieldComp" *ngSwitchCase="'pxDisplayText'" [noLabel]="noLabel"[CaseID]="CaseID"></app-text>
+  <app-button [fieldComp]="fieldComp" *ngSwitchCase="'pxButton'" [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID"></app-button>
+  <app-link [fieldComp]="fieldComp" *ngSwitchCase="'pxLink'" [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID"></app-link>
+  <app-number [fieldComp]="fieldComp" *ngSwitchCase="'pxCurrency'"  [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID" [RefType$]="RefType$"></app-number>
+  <app-text [fieldComp]="fieldComp" *ngSwitchCase="''" [noLabel]="noLabel" [CaseID]="CaseID"></app-text>
+  <app-textinput [fieldComp]="fieldComp" *ngSwitchCase="'pxURL'" [formGroup]="formGroup" [noLabel]=noLabel [CaseID]="CaseID" [RefType$]="RefType$"></app-textinput>
+  <div *ngSwitchCase="'pxHidden'"></div>
+  <app-nosupport [fieldComp]="fieldComp" [formGroup]="formGroup" *ngSwitchDefault [noLabel]="noLabel" [CaseID]="CaseID"></app-nosupport>
+</div>
+
+
+
+  

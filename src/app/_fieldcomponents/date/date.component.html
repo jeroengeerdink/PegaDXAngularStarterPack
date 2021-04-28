@@ -1,0 +1,20 @@
+<div [formGroup]="formGroup">
+  <mat-form-field class="pega-full-width" *ngIf="!fieldComp?.readOnly && !fieldComp?.disabled">
+    <input matInput #dateInput [matDatepicker]="pegadate" [placeholder]="fieldComp?.label"
+    [formControlName]="fieldComp?.controlName" [value]="displayValue$.value"
+    [id]="fieldComp.fieldID" (change)="fieldChanged($event)" (dateChange)="fieldDateChanged(dateInput.value)" (click)="fieldClick($event)"  (blur)="fieldBlur($event)" 
+    [required]="fieldComp.required" >
+    <mat-datepicker-toggle matSuffix [for]="pegadate"></mat-datepicker-toggle>
+    <mat-datepicker #pegadate [startAt]="fieldComp.value"></mat-datepicker>
+    <mat-hint align="start"><strong>{{tooltip$}}</strong></mat-hint>
+    <mat-error *ngIf="fieldControl.invalid">{{getErrorMessage()}}</mat-error>
+  </mat-form-field>
+
+  <!-- readonly, used formatted text -->
+  <app-text [fieldComp]="fieldComp" *ngIf="fieldComp!.readOnly" [noLabel]="noLabel"></app-text>
+
+
+</div>
+
+
+

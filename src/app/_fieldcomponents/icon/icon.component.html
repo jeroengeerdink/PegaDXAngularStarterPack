@@ -1,0 +1,15 @@
+<div class="mat-form-field-infix" *ngIf="showLabel$">
+    <span>
+        <label class="mat-form-field-label pega-label-readonly">{{fieldComp?.label}}</label>
+    </span>
+    <a class="pega-icon" mat-button *ngIf="hasActions$ && !isImage$" (click)="iconClick($event)"><mat-icon >{{iconName$}}</mat-icon></a>
+    <mat-icon class="pega-icon" *ngIf="!hasActions$ && !isImage$"
+    [matTooltip]="tooltip$" >{{iconName$}}</mat-icon>
+    <img class="pega-icon" *ngIf="isImage$" src={{imageName$}}>
+</div>
+<div *ngIf="!showLabel$">
+    <a class="pega-icon" mat-button *ngIf="hasActions$ && !isImage$" (click)="iconClick($event)"><mat-icon >{{iconName$}}</mat-icon></a>
+    <mat-icon class="pega-icon" *ngIf="!hasActions$ && !isImage$" 
+    [matTooltip]="tooltip$">{{iconName$}}</mat-icon>
+    <img class="pega-icon" *ngIf="isImage$" src={{imageName$}}>
+</div>

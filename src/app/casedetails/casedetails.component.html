@@ -1,0 +1,6 @@
+<div *ngIf="showDetails">
+    <h1>{{detailsName}}</h1>
+    <mat-divider *ngIf="detailsName" style="position: unset;"></mat-divider>
+    <app-group [groups]="groups$" [formGroup]="fg"></app-group>
+
+</div>

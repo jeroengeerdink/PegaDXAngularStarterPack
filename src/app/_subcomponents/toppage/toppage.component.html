@@ -1,0 +1,5 @@
+<div *ngIf="showPage">
+  <form [formGroup]="fg" name="workItem">
+      <app-group [groups]="groups$" [formGroup]="fg" [CaseID]="CaseID"></app-group>
+  </form>
+</div>

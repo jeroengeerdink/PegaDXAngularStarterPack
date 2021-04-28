@@ -1,0 +1,19 @@
+<div class="mat-form-field-infix" *ngIf="showLabel$">
+    <span>
+        <label class="mat-form-field-label pega-label-readonly">{{fieldComp?.label}}</label>
+    </span>
+    <div class="pega-button">
+        <button mat-raised-button  color="{{buttonColor$}}" [disabled]="fieldComp?.disabled"
+        [matTooltip]="tooltip$"
+        (click)=buttonClick($event)
+        ><span class='{{buttonFormat$}}'>{{buttonLabel$}}</span></button>
+    </div>
+</div>
+<div *ngIf="!showLabel$">
+    <div class="pega-button">
+        <button mat-raised-button color="{{buttonColor$}}" [disabled]="fieldComp?.disabled"
+        [matTooltip]="tooltip$" 
+        (click)=buttonClick($event)
+        ><span class='{{buttonFormat$}}'>{{buttonLabel$}}</span></button>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+image:
+  file: .gitpod.Dockerfile
+ports:
+  - port: 3000
+    onOpen: open-preview
+tasks:
+  - init: 
+      echo 'init script' echo "Getting dependencies..." 
+      & npm install
+      
+  - command:
+      firebase login --no-localhost

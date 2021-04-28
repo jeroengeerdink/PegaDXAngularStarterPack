@@ -1,0 +1,7 @@
+<mat-list>
+  <mat-list-item *ngFor="let recent of recentList$">
+    <button (click)="openRecent(recent)"
+      mat-button> {{recent.pyLabel}} | {{recent.pyDescription}}</button>
+  </mat-list-item>
+
+</mat-list>

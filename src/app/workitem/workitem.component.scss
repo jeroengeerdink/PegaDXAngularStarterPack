@@ -1,0 +1,76 @@
+.progress-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: whitesmoke;
+    position: fixed;
+    z-index: 999;
+    top: 0px;
+    left: 0px;
+    opacity: 0.5;
+}
+
+.progress-spinner {
+    text-align: center;
+}
+
+
+
+  
+  .example-headers-align .mat-expansion-panel-header-title, 
+  .example-headers-align .mat-expansion-panel-header-description {
+    flex-basis: 0;
+  }
+  
+  .example-headers-align .mat-expansion-panel-header-description {
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .mat-expansion-panel-header {
+      border-bottom: 1px solid lightgray;
+      
+  }
+  
+  .mat-expansion-panel {
+      border: 1px solid lightgray;
+      border-radius: 5px;
+  }
+  
+ 
+  .pega-workitem-header {
+    display: table; 
+    width: 100%;
+  }
+
+  .pega-workitem-breadcrumb {
+    float: left; 
+    padding: 20px 0px;
+    justify-content: center;
+  }
+
+  .pega-workitem-actions-menu {
+    float: right;
+    padding: 10px 0px; 
+  }
+
+  .pega-workitem-main {
+    display: table;
+    padding: 0px;
+    width: 100%;
+  }
+
+  .pega-workitem-item {
+    float: left;
+  }
+
+  .pega-workitem-details {
+    float: right;
+  }
+
+  .mat-card-header ::ng-deep .mat-card-header-text {
+    display: none;
+}

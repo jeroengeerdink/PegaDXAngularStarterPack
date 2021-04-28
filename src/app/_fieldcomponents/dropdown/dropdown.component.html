@@ -1,0 +1,19 @@
+<div [formGroup]="formGroup">
+  <mat-form-field class="pega-full-width" *ngIf="!fieldComp?.readOnly">
+    <mat-select [compareWith]="compareDropdown" [formControlName]="fieldComp?.controlName"
+    [value]="fieldComp.value" (selectionChange)="fieldChanged($event)" [required]="fieldComp.required"
+    [placeholder]="placeholder$">
+        <mat-option *ngFor="let opt of options" [value]="opt.key">
+          {{opt.value}}
+        </mat-option>
+      </mat-select>
+      <mat-label>{{fieldComp?.label}}</mat-label>
+      <mat-hint align="start"><strong>{{tooltip$}}</strong></mat-hint>
+      <mat-error *ngIf="fieldControl.invalid">{{getErrorMessage()}}</mat-error>
+  </mat-form-field>
+
+  <!-- readonly, used formatted text -->
+  <app-text [fieldComp]="fieldComp" *ngIf="fieldComp!.readOnly" [noLabel]="noLabel"></app-text>
+  
+</div>
+

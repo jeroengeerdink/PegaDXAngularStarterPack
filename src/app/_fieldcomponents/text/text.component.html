@@ -1,0 +1,16 @@
+
+<div class="mat-form-field-infix" *ngIf="showLabel$">
+    <span>
+      <label class="mat-form-field-label pega-label-readonly">{{fieldComp?.label}}</label>
+    </span>
+    <div class="pega-data-readonly">
+      <label *ngIf="format$!='url'">{{formattedValue$}}</label>
+      <a *ngIf="format$=='url'" href="{{formattedUrl$}}">{{formattedValue$}}</a>
+    </div>
+</div>
+<div *ngIf="!showLabel$">
+  <div class="pega-data-readonly">
+    <label *ngIf="format$!='url'">{{formattedValue$}}</label>
+    <a *ngIf="format$=='url'" href="{{formattedUrl$}}">{{formattedValue$}}</a>
+  </div>
+</div>

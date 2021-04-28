@@ -1,0 +1,16 @@
+<div [formGroup]="formGroup">
+    <mat-form-field class="pega-full-width" *ngIf="!fieldComp?.readOnly" class="pega-radio-form">
+      <input matInput [placeholder]="fieldComp?.label" style="display: none;">
+      <mat-radio-group  [className]="radioClass$" [formControlName]="fieldComp?.controlName"
+      [matTooltip]="tooltip$" 
+      [value]="fieldComp.value" (change)="fieldChanged($event)" [required]="fieldComp.required">
+        <mat-radio-button *ngFor="let opt of options" [checked]="isSelected(opt.key)" [value]="opt.key" class="pega-radio-button">
+            {{opt.value}}
+        </mat-radio-button>
+      </mat-radio-group>
+    </mat-form-field>
+
+  <!-- readonly, used formatted text -->
+  <app-text [fieldComp]="fieldComp" *ngIf="fieldComp!.readOnly" [noLabel]="noLabel"></app-text>
+  
+</div>

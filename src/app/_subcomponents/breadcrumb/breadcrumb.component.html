@@ -1,0 +1,5 @@
+<span class="pega-breadcrumb" *ngFor="let stage of CurrentCase.stages">
+  <span *ngIf="!stage.currentStage">{{stage.name}}</span>
+  <span *ngIf="stage.currentStage" style="color: orange">{{stage.name}}</span>
+  <span *ngIf="!stage.last">&gt;</span>
+</span>

@@ -1,0 +1,13 @@
+<mat-tab-group [selectedIndex]="selected.value"
+               (selectedIndexChange)="selected.setValue($event)">
+    <mat-tab *ngFor="let tab of tabs; let index = index">
+        <ng-template mat-tab-label>
+            {{tab}}&nbsp;&nbsp;<mat-icon *ngIf="tab != 'Dashboard'" class="tabRemove" (click)="removeTab(tab)">close</mat-icon>
+          </ng-template>
+    <div class="center">
+    <!-- <h1 *ngIf="tab === 'Dashboard'">{{tab}}</h1> -->
+    <app-worklistpanel *ngIf="tab === 'Dashboard'"></app-worklistpanel>
+    <app-workitem *ngIf="tab != 'Dashboard'"></app-workitem>
+    </div>
+  </mat-tab>
+</mat-tab-group>

@@ -1,0 +1,35 @@
+<div>
+<table class="pega-repeating-grid">
+  <tr>
+    <th *ngIf="layoutComp.referenceType == 'Group'">&nbsp;</th>
+    <th *ngFor="let headerComp of repeatHeader$" [width]="headerComp.caption.columnWidth">
+      <app-caption *ngIf="headerComp.caption" [captionComp]="headerComp.caption" [formGroup]="formGroup"></app-caption>
+    </th>
+  </tr>
+  <tr *ngFor="let rowsComp of repeatRows$">
+    <td *ngIf="layoutComp.referenceType == 'Group'">
+      {{rowsComp.groupIndex}}
+    </td>
+    <td *ngFor="let rowComp of rowsComp.groups">
+        <app-layout *ngIf="rowComp.layout" [layoutComp]="rowComp.layout" [formGroup]="formGroup" [CaseID]="CaseID"></app-layout>
+        <app-field *ngIf="rowComp.field" [fieldComp]="rowComp.field"  [formGroup]="formGroup" [noLabel]="true" 
+        [CaseID]="CaseID" [RefType$]="layoutComp.referenceType"></app-field>
+        <app-caption *ngIf="rowComp.caption" [captionComp]="rowComp.caption" [formGroup]="formGroup"></app-caption>
+        <app-view *ngIf="rowComp.view" [viewComp]="rowComp.view"  [formGroup]="formGroup" 
+        [CaseID]="CaseID" [RefType$]="layoutComp.referenceType"></app-view>
+        <app-paragraph *ngIf="rowComp.paragraph" [paragraphComp]="rowComp.paragraph"></app-paragraph>
+    </td>
+  </tr>
+</table>
+<div class="pega-repeating-buttons">
+<a mat-button (click)="addRow()">
+    <mat-icon class="pega-icon-left"  >add_circle</mat-icon>
+    Add Row
+</a>
+<a mat-button (click)="removeRow()">
+    <mat-icon class="pega-icon-left"  >remove_circle</mat-icon>
+    Delete Row
+</a>
+</div>
+
+</div>

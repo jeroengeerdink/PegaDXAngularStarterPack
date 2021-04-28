@@ -1,0 +1,50 @@
+.pega-icon-left {
+    padding-right: 2px;
+}
+
+.pega-icon-right {
+    padding-left: 2px;
+}
+
+.pega-full-width {
+    width: 100%;
+}
+
+.pega-label-readonly {
+  top: 10px;
+  font-size: 14px; 
+  display: block;
+  transform: translateY(-1.28125em) scale(.75) perspective(100px) translateZ(.001px);
+  -ms-transform: translateY(-1.28125em) scale(.75);
+  width: 133.33333%;
+}
+
+.pega-data-readonly {
+  padding-top: 10px;
+}
+
+.pega-link {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.pega-link-disabled {
+    padding-left: 0px;
+    padding-right: 0px;
+    min-width: 88px;
+    line-height: 36px;
+    color: gray;
+}
+
+
+.pega-link-strong {
+    font-weight: bold;
+}
+
+.pega-link-standard {
+    font-weight: normal;
+}
+
+.pega-link-light {
+    font-weight: lighter;
+}

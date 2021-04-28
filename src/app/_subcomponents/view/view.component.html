@@ -1,0 +1,7 @@
+<div *ngIf="showView$">
+    <!-- <h1>{{viewName$}}</h1> -->
+    <h2 *ngIf="viewComp?.title">{{viewComp.title}}</h2>
+
+    <app-group [groups]="groups$" [formGroup]="formGroup" [noLabel]="noLabel" 
+    [CaseID]="CaseID" [RefType$]="RefType$"></app-group>
+</div> 

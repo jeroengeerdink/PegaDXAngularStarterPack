@@ -1,0 +1,23 @@
+<div [formGroup]="formGroup">
+
+
+  <div class="mat-form-field-infix" *ngIf="showLabel$">
+    <span>
+      <label class="mat-form-field-label pega-label-readonly">{{fieldComp?.label}}</label>
+    </span>
+    <div class="pega-data-readonly" *ngIf="fieldComp.control.type != ''">
+      <label>No support for control: {{fieldComp.control?.type}}</label>
+    </div>
+    <div class="pega-data-readonly" *ngIf="fieldComp.control.type == ''">
+      &nbsp;
+    </div>
+  </div>
+  <div *ngIf="!showLabel$">
+    <div class="pega-data-readonly" *ngIf="fieldComp.control.type != ''">
+      <label>No support for control: {{fieldComp.control?.type}}</label>
+    </div>
+    <div class="pega-data-readonly" *ngIf="fieldComp.control.type == ''">
+      &nbsp;
+    </div>
+  </div> 
+</div>

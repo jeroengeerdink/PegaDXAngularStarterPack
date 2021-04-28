@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>{{data.title}}</h1>
+
+<div mat-dialog-content>
+    <app-view [viewComp]="data.dialogView"  [formGroup]="data.formGroup" 
+    [CaseID]="data.caseID" [RefType$]="data.refTypes"></app-view>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="cancelDialog()">Cancel</button>
+  <button mat-button (click)="submitDialog()">Submit</button>
+</div>

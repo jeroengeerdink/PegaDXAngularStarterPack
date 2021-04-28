@@ -1,0 +1,24 @@
+<div [formGroup]="formGroup">
+  <mat-form-field class="pega-full-width" *ngIf="!fieldComp?.readOnly">
+    <textarea matInput rows="5" [placeholder]="fieldComp?.label" type="text" [formControl]="fieldControl" 
+    [id]="fieldComp.fieldID" [value]="selectedValue" (change)="fieldChanged($event)" 
+    [required]="fieldComp.required" ></textarea>
+    <mat-hint align="start"><strong>{{tooltip$}}</strong></mat-hint>
+    <mat-error *ngIf="fieldControl.invalid">{{getErrorMessage()}}</mat-error>
+  </mat-form-field>
+
+
+  <div class="mat-form-field-infix" *ngIf="fieldComp?.readOnly && showLabel$">
+    <span>
+      <label class="mat-form-field-label pega-label-readonly">{{fieldComp?.label}}</label>
+    </span>
+    <div class="pega-data-readonly">
+      <span style="white-space: pre-wrap;">{{selectedValue}}</span>
+    </div>
+  </div>
+  <div *ngIf="fieldComp?.readOnly && !showLabel$">
+      <div class="pega-data-readonly">
+        <span style="white-space: pre-wrap;">{{selectedValue}}</span>
+      </div>
+  </div> 
+</div>

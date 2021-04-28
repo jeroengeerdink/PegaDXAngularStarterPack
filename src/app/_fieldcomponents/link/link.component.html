@@ -1,0 +1,32 @@
+<div class="mat-form-field-infix" *ngIf="showLabel$">
+  <span>
+    <label class="mat-form-field-label pega-label-readonly">{{fieldComp?.label}}</label>
+  </span>
+  <button mat-button class="{{linkStyleClass$}} {{linkFormat$}}" color="{{buttonColor$}}" (click)=linkClick($event) *ngIf="!hasIcon$ && !hasImage$"
+  [matTooltip]="tooltip$">{{linkLabel$}}</button>
+  <button mat-button class="{{linkStyleClass$}} {{linkFormat$}}" color="{{linkColor$}}" (click)=linkClick($event) *ngIf="hasIcon$"
+  [matTooltip]="tooltip$">
+    <mat-icon class="pega-icon-left" *ngIf="linkIconLocation$=='left'">{{linkIcon$}}</mat-icon>
+    {{linkLabel$}}
+    <mat-icon class="pega-icon-right" *ngIf="linkIconLocation$=='right'"
+    [matTooltip]="tooltip$">{{linkIcon$}}</mat-icon></button>
+  <button mat-button class="{{linkStyleClass$}} {{linkFormat$}}" color="{{linkColor$}}" (click)=linkClick($event) *ngIf="hasImage$"
+  [matTooltip]="tooltip$">
+    <img class="pega-icon-left" *ngIf="linkIconLocation$=='left'" src="{{linkImage$}}"/>
+    {{linkLabel$}}
+    <img class="pega-icon-right" *ngIf="linkIconLocation$=='right'" src="{{linkImage$}}"/></button>  
+</div>
+<div *ngIf="!showLabel$">
+  <button mat-button class="{{linkStyleClass$}} {{linkFormat$}}" color="{{linkColor$}}" (click)=linkClick($event) *ngIf="!hasIcon$ && !hasImage$"
+  [matTooltip]="tooltip$">{{linkLabel$}}</button>
+  <button mat-button class="{{linkStyleClass$}} {{linkFormat$}}" color="{{linkColor$}}" (click)=linkClick($event) *ngIf="hasIcon$"
+  [matTooltip]="tooltip$">
+    <mat-icon class="pega-icon-left" *ngIf="linkIconLocation$=='left'">{{linkIcon$}}</mat-icon>
+    {{linkLabel$}}
+    <mat-icon class="pega-icon-right" *ngIf="linkIconLocation$=='right'">{{linkIcon$}}</mat-icon></button>
+  <button mat-button class="{{linkStyleClass$}} {{linkFormat$}}" color="{{linkColor$}}" (click)=linkClick($event) *ngIf="hasImage$"
+  [matTooltip]="tooltip$">
+    <img class="pega-icon-left" *ngIf="linkIconLocation$=='left'" src="{{linkImage$}}"/>
+    {{linkLabel$}}
+    <img class="pega-icon-right" *ngIf="linkIconLocation$=='right'" src="{{linkImage$}}"/></button>  
+</div>

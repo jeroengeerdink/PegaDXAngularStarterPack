@@ -1,0 +1,23 @@
+<div [formGroup]="formGroup">
+    <div class="mat-form-field-infix" *ngIf="!fieldComp?.readOnly && showLabel$">
+      <span>
+          <label class="mat-form-field-label pega-label-readonly">{{fieldComp?.label}}</label>
+      </span>     
+      <mat-checkbox [formControl]="fieldControl" *ngIf="!fieldComp?.readOnly"
+      [matTooltip]="tooltip$"
+      (change)="fieldChanged($event)" (click)="fieldClick($event)"  (blur)="fieldBlur($event)" 
+      [id]="fieldComp.reference" [labelPosition]="checkboxLabelPos$">{{fieldComp?.control.label}}</mat-checkbox>
+    </div>
+    <div class="mat-form-field-infix" *ngIf="!fieldComp?.readOnly && !showLabel$">
+      <mat-checkbox [formControl]="fieldControl" *ngIf="!fieldComp?.readOnly"
+      [matTooltip]="tooltip$"
+      (change)="fieldChanged($event)" (click)="fieldClick($event)"  (blur)="fieldBlur($event)" 
+      [id]="fieldComp.reference" [labelPosition]="checkboxLabelPos$">{{fieldComp?.control.label}}</mat-checkbox>
+    </div>
+
+  <!-- readonly, used formatted text -->
+  <app-text [fieldComp]="fieldComp" *ngIf="fieldComp!.readOnly" [noLabel]="noLabel"></app-text>
+
+
+
+</div>

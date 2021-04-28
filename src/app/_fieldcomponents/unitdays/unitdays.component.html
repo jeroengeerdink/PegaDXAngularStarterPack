@@ -1,0 +1,24 @@
+<div [formGroup]="formGroup">
+  <mat-form-field class="pega-full-width" *ngIf="!fieldComp?.readOnly">
+    <input matInput [placeholder]="fieldComp?.label" type="number" [formControl]="fieldControl" 
+    [id]="fieldComp.fieldID" [value]="fieldComp.value" (change)="fieldChanged($event)" (click)="fieldClick($event)"  (blur)="fieldBlur($event)"
+    [required]="fieldComp.required">
+    <mat-error *ngIf="fieldControl.invalid">{{getErrorMessage()}}</mat-error>
+    <mat-hint align="start"><strong>{{tooltip$}}</strong></mat-hint>
+  </mat-form-field>
+
+  <div class="mat-form-field-infix" *ngIf="fieldComp?.readOnly && showLabel$">
+    <span>
+      <label class="mat-form-field-label pega-label-readonly">{{fieldComp?.label}}</label>
+    </span>
+    <div class="pega-data-readonly">
+      <label>{{fieldComp?.value}}</label>
+    </div>
+  </div>
+  <div *ngIf="fieldComp?.readOnly && !showLabel$">
+      <div class="pega-data-readonly">
+        <label>{{fieldComp?.value}}</label>
+      </div>
+  </div> 
+
+</div>

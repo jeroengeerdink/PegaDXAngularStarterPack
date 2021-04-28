@@ -1,0 +1,13 @@
+<div [formGroup]="formGroup">
+  <mat-form-field class="pega-full-width" *ngIf="!fieldComp?.readOnly">
+    <input matInput [placeholder]="fieldComp?.label" type="number" [formControl]="fieldControl" 
+    [id]="fieldComp.fieldID" [value]="fieldComp.value" (change)="fieldChanged($event)" (click)="fieldClick($event)"  (blur)="fieldBlur($event)"
+    [required]="fieldComp.required" >
+    <mat-error *ngIf="fieldControl.invalid">{{getErrorMessage()}}</mat-error>
+    <mat-hint align="start"><strong>{{tooltip$}}</strong></mat-hint>
+  </mat-form-field>
+
+  <!-- readonly, used formatted text -->
+  <app-text [fieldComp]="fieldComp" *ngIf="fieldComp!.readOnly" [noLabel]="noLabel"></app-text>
+  
+</div>

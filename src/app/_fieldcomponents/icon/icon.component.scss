@@ -1,0 +1,21 @@
+.pega-icon {
+    padding: 0px 2px;
+    min-width: unset;
+}
+
+.pega-full-width {
+    width: 100%;
+}
+
+.pega-label-readonly {
+  top: 10px;
+  font-size: 14px; 
+  display: block;
+  transform: translateY(-1.28125em) scale(.75) perspective(100px) translateZ(.001px);
+  -ms-transform: translateY(-1.28125em) scale(.75);
+  width: 133.33333%;
+}
+
+.pega-data-readonly {
+  padding-top: 10px;
+}

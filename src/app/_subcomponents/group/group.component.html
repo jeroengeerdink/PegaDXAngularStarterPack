@@ -1,0 +1,9 @@
+<div *ngFor="let groupComp of groups" >
+  <app-layout *ngIf="groupComp.layout" [layoutComp]="groupComp.layout" [formGroup]="formGroup" [CaseID]="CaseID" [RefType$]="RefType$"></app-layout>
+  <app-field *ngIf="groupComp.field" [fieldComp]="groupComp.field"  [formGroup]="formGroup" 
+  [CaseID]="CaseID" [RefType$]="RefType$"></app-field>
+  <app-caption *ngIf="groupComp.caption" [captionComp]="groupComp.caption" [formGroup]="formGroup"></app-caption>
+  <app-view *ngIf="groupComp.view" [viewComp]="groupComp.view"  [formGroup]="formGroup" 
+  [CaseID]="CaseID" [RefType$]="RefType$"></app-view>
+  <app-paragraph *ngIf="groupComp.paragraph" [paragraphComp]="groupComp.paragraph"></app-paragraph>
+</div>

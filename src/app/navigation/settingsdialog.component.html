@@ -1,0 +1,30 @@
+<h1 mat-dialog-title>Application Settings</h1>
+<div mat-dialog-content class="mat-typography">
+  <h3><b>Optimizations for 8.3+</b></h3>
+</div>
+<div mat-dialog-content style="overflow: unset;">
+  <mat-checkbox [checked]=data.bUseNewRow [value]=data.bUseNewRow 
+  [(ngModel)]="data.bUseNewRow">PageList/Group New Row</mat-checkbox>
+  <mat-checkbox [disabled]="!data.bUseNewRow" [checked]=data.bUseRepeatPageInstructions [value]=data.bUseRepeatPageInstructions
+  [(ngModel)]="data.bUseRepeatPageInstructions">PageList/Group Use Page Instructions</mat-checkbox>
+  <br><br>
+  <mat-checkbox [checked]=data.bUsePagePageInstructions [value]=data.bUsePagePageInstructions
+  [(ngModel)]="data.bUsePagePageInstructions">Embeded Page Use Page Instructions</mat-checkbox>
+  <br><br>
+  <mat-checkbox [checked]=data.bUseLocalOptionsForDataPage [value]=data.bUseLocalOptionsForDataPage
+  [(ngModel)]="data.bUseLocalOptionsForDataPage">Autocomplete/Dropdown use local options for Data Page</mat-checkbox>
+  <mat-checkbox [checked]=data.bUseLocalOptionsForClipboardPage [value]=data.bUseLocalOptionsForClipboardPage
+  [(ngModel)]="data.bUseLocalOptionsForClipboardPage">Autocomplete/Dropdown use local options for Clipboard Page</mat-checkbox>
+</div>
+<br>
+<div mat-dialog-content class="mat-typography">
+  <h3><b>Optimizations for 8.4+</b></h3>
+</div>
+<div mat-dialog-content style="overflow: unset;">
+  <mat-checkbox [checked]=data.bUsePostAssignSave [value]=data.bUsePostAssignSave 
+  [(ngModel)]="data.bUsePostAssignSave">Save Assignment (preferred) (vs. Save Case)</mat-checkbox>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="closeDialog()">Ok</button>
+  <button mat-button (click)="onCancelClick()">Cancel</button>
+</div>

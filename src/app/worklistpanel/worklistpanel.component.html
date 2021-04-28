@@ -1,0 +1,19 @@
+
+<mat-card class="worklistpanel-card" style="margin:0.5em;">
+  <mat-card-header style="justify-content: center;">
+    <div>
+        <h2 *ngIf="arWorkbaskets$.length == 0">Worklist</h2>
+        <h2 *ngIf="arWorkbaskets$.length > 0">
+        <mat-select class="worklistpanel-select" [compareWith]="compareDropdown" [formControl]="workbaskets" 
+          (selectionChange)="dropDownChanged($event)">
+          <mat-option value="Worklist" selected class="happy" >Worklist</mat-option>
+          <mat-option *ngFor="let workbasket of arWorkbaskets$"  [value]="workbasket.pyWorkBasketName">{{workbasket.pyWorkBasketName}}</mat-option>
+        </mat-select>
+        </h2>   
+    </div>
+  </mat-card-header>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+      <app-worklist></app-worklist>   
+  </mat-card-content>
+</mat-card>

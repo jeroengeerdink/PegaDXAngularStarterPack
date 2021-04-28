@@ -1,0 +1,5 @@
+<div *ngFor="let rowsComp of repeatRows$; last as isLast">
+    <app-group [groups]="rowsComp.groups" [formGroup]="formGroup" 
+    [CaseID]="CaseID" [RefType$]="layoutComp.referenceType"></app-group>
+    <mat-divider *ngIf="!isLast" class="pega-repeating-divider"></mat-divider>
+</div>

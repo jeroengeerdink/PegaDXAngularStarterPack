@@ -1,0 +1,83 @@
+* {
+    box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.pega-column {
+    float: left;
+    width: 50%;
+    padding: 0px 5px;
+    height: 100%; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.pega-row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.pega-rowBox {
+    display: flex;
+}
+
+.pega-column70 {
+    float: left;
+    width: 70%;
+    padding: 0px 5px;
+    height: 100%; /* Should be removed. Only for demonstration */
+}
+
+.pega-column30 {
+    float: left;
+    width: 30%;
+    padding: 0px 5px;
+    height: 100%; /* Should be removed. Only for demonstration */
+}
+
+.pega-column33 {
+    float: left;
+    width: 33%;
+    padding: 0px 5px;
+    height: 100%; /* Should be removed. Only for demonstration */
+}
+
+.pega-header {
+    height: 40px;
+}
+
+.pega-space {
+    padding-top: 10px;
+}
+
+.pega-stacked {
+    padding-top: 5px;
+}
+
+.pega-content {
+    height: 100%;
+}
+
+.pega-footer {
+    height: 40px;
+}
+
+.pega-screen-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 500px;
+}
+
+.pega-inline-middle, .pega-inline-middle ::ng-deep app-group {
+    display: flex;
+    flex-direction: row;
+}
+
+.pega-simple-list {
+    display: flex;
+}
+
+
+.pega-layout-format-warnings {
+    background-color: #FFECCC;
+}

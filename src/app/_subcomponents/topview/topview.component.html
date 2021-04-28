@@ -1,0 +1,10 @@
+
+<div *ngIf="showView">
+    <h1>{{topName}}</h1>
+    <mat-divider *ngIf="topName" style="position: unset;"></mat-divider>
+    <form [formGroup]="fg" name="workItem">
+        <app-group [groups]="groups$" [formGroup]="fg" [CaseID]="CaseID"></app-group>
+    </form>
+</div>
+
+

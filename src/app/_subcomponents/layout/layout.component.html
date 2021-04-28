@@ -1,0 +1,136 @@
+<div *ngIf="showLayout" class={{layoutContainerFormat$}}>
+
+  <h2 *ngIf="layoutComp.title">{{layoutTitle}}</h2>
+  <!--
+  <div *ngIf="layoutComp.title; then pegaHeader; else pegaSpace"></div>
+  <ng-template #pegaHeader><h2>{{layoutComp.title}}</h2></ng-template>
+  <ng-template #pegaSpace><div class="pega-space"></div></ng-template>
+  -->
+
+  <div *ngIf="layoutComp.groupFormat == 'Inline grid double'" class="pega-row" >
+    <div class="pega-column" >
+      <app-layout [layoutComp]="layoutComp.groups[0].layout" [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID" [RefType$]="RefType$"></app-layout>
+    </div>
+    <div class="pega-column" >
+      <app-layout [layoutComp]="layoutComp.groups[1].layout"  [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID" [RefType$]="RefType$"></app-layout>
+    </div>
+  </div>
+
+  
+  <div *ngIf="layoutComp.groupFormat == 'Inline grid 70 30'" class="pega-rowBox pega-row" >
+    <div class="pega-column70" >
+      <app-layout [layoutComp]="layoutComp.groups[0].layout" [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID" [RefType$]="RefType$"></app-layout>
+    </div>
+    <div class="pega-column30" >
+      <app-layout [layoutComp]="layoutComp.groups[1].layout"  [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID" [RefType$]="RefType$"></app-layout>
+    </div>
+  </div>
+
+  <div *ngIf="layoutComp.groupFormat == 'Inline grid 30 70'" class="pega-rowBox pega-row" >
+    <div class="pega-column30" >
+      <app-layout [layoutComp]="layoutComp.groups[0].layout" [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID" [RefType$]="RefType$"></app-layout>
+    </div>
+    <div class="pega-column70" >
+      <app-layout [layoutComp]="layoutComp.groups[1].layout"  [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID" [RefType$]="RefType$"></app-layout>
+    </div>
+  </div>
+
+  <div *ngIf="layoutComp.groupFormat == 'Inline grid triple'" class="pega-row" >
+    <div class="pega-column33" >
+      <app-layout [layoutComp]="layoutComp.groups[0].layout" [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID" [RefType$]="RefType$"></app-layout>
+    </div>
+    <div class="pega-column33" >
+      <app-layout [layoutComp]="layoutComp.groups[1].layout"  [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID" [RefType$]="RefType$"></app-layout>
+    </div>
+    <div class="pega-column33" >
+      <app-layout [layoutComp]="layoutComp.groups[2].layout"  [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID" [RefType$]="RefType$"></app-layout>
+    </div>
+  </div>
+
+
+
+  <div *ngIf="layoutComp.groupFormat == 'Stacked' || layoutComp.groupFormat == '' || layoutComp.groupFormat == 'Default'" class="pega-stacked">
+    <app-group [groups]="layoutComp.groups" [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID" [RefType$]="RefType$"></app-group>
+  </div>
+
+  <div *ngIf="layoutComp.groupFormat == 'Action area'" >
+    <app-group [groups]="layoutComp.groups" [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID" [RefType$]="RefType$"></app-group>
+  </div>
+
+  <div *ngIf="layoutComp.groupFormat == 'Mimic a sentence'"  >
+      <app-group [groups]="layoutComp.groups" [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID" [RefType$]="RefType$"></app-group>
+  </div>
+
+  <div *ngIf="layoutComp.groupFormat == 'Simple list'" class="pega-simple-list" >
+    <app-group [groups]="layoutComp.groups" [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID" [RefType$]="RefType$"></app-group>
+  </div>
+
+  <div *ngIf="layoutComp.groupFormat == 'Inline middle'" class="pega-inline-middle" >
+    <app-group [groups]="layoutComp.groups" [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID" [RefType$]="RefType$"></app-group>
+  </div>
+ 
+
+
+  <!-- repeating grid layout -->
+  <div *ngIf="layoutComp.layoutFormat == 'REPEATINGROW'" >
+    <div *ngIf="layoutComp.groupFormat == 'Grid'">
+      <app-repeatinggrid [layoutComp]="layoutComp" [formGroup]="formGroup" [CaseID]="CaseID"></app-repeatinggrid>
+    </div>
+  </div>
+
+  <!-- dynamic repeating layout -->
+  <div *ngIf="layoutComp.layoutFormat == 'REPEATINGLAYOUT'">
+    <div *ngIf="layoutComp.groupFormat == 'Dynamic'">
+      <app-repeatinglayout [layoutComp]="layoutComp" [formGroup]="formGroup" [CaseID]="CaseID"></app-repeatinglayout>
+    </div>
+  </div>
+
+
+
+
+
+   <!-- screen layouts-->
+   <div *ngIf="layoutComp.layoutFormat == 'SCREENLAYOUT'"  >
+    <div *ngIf="layoutComp.groupFormat == 'content_only'" class="pega-screen-layout">
+      <app-layout [layoutComp]="layoutComp.groups[0].layout" [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID"></app-layout>
+    </div>
+
+    <div *ngIf="layoutComp.groupFormat == 'header'" class="pega-screen-layout">
+        <div class="pega-header" >
+            <app-layout [layoutComp]="layoutComp.groups[0].layout" [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID"></app-layout>
+        </div>
+        <div class="pega-content">
+            <app-layout [layoutComp]="layoutComp.groups[1].layout" [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID"></app-layout>
+        </div>
+    </div>
+  </div>
+
+  <div *ngIf="layoutComp.groupFormat == 'header_footer'" class="pega-screen-layout">
+    <div class="pega-header" >
+        <app-layout [layoutComp]="layoutComp.groups[0].layout" [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID"></app-layout>
+    </div>
+    <div class="pega-content">
+        <app-layout [layoutComp]="layoutComp.groups[2].layout" [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID"></app-layout>
+    </div>
+    <div class="pega-footer">
+      <app-layout [layoutComp]="layoutComp.groups[1].layout" [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID"></app-layout>
+    </div>
+  </div>
+
+
+  <div *ngIf="layoutComp.groupFormat == 'TOP'" >
+    <app-view [viewComp]= "layoutComp.view" [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID"></app-view>
+  </div>
+
+  <div *ngIf="layoutComp.groupFormat == 'BOTTOM'" >
+    <app-view [viewComp]= "layoutComp.view" [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID"></app-view>
+  </div>
+
+  <div *ngIf="layoutComp.groupFormat == 'CENTER'" >
+    <app-view [viewComp]= "layoutComp.view" [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID"></app-view>
+  </div>
+
+
+  
+</div>
+

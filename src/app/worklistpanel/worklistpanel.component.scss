@@ -1,0 +1,33 @@
+
+.worklistpanel-select ::ng-deep .mat-select-value {
+  display: inline;
+}
+
+.example-headers-align .mat-expansion-panel-header-title, 
+.example-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mat-expansion-panel-header {
+    border-bottom: 1px solid lightgray;
+    
+}
+
+.mat-expansion-panel {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+
+
+.worklistpanel-card {
+  margin:1px; 
+  padding: 0px 5px 0px 5px;
+  min-height: 700px;
+}
+
+
